@@ -5,7 +5,6 @@ import MobileFloatingCta from "@/components/layout/MobileFloatingCta";
 
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
-import EditorialTypography from "@/components/sections/EditorialTypography";
 import ServicesPinned from "@/components/sections/ServicesPinned";
 import QuietMoment from "@/components/sections/QuietMoment";
 import RealGallery from "@/components/sections/RealGallery";
@@ -24,10 +23,7 @@ export default function Home() {
       {/* SCENE 03: ABOUT / THE SPACE - REAL TREATMENT ROOM AT 159 BA VÂN */}
       <About />
 
-      {/* SCENE 04: EDITORIAL TYPOGRAPHY */}
-      <EditorialTypography />
-
-      {/* SCENE 05: PINNED SERVICES SHOWCASE - 100% REAL TREATMENT PHOTOS */}
+      {/* SCENE 04: PINNED SERVICES SHOWCASE - 100% REAL TREATMENT PHOTOS */}
       <ServicesPinned />
 
       {/* SCENE 06: QUIET BREATHING MOMENT WITH REAL OMI SPA POSTER */}

@@ -112,18 +112,19 @@ export default function About() {
         </div>
       </div>
 
-      {/* Expanding Cinematic Image Frame - Uses exact 2048/900 aspect ratio so bottom phone & address are fully visible */}
+      {/* Expanding Cinematic Image Frame - Natural 2048x900 aspect ratio, zero cropping so phone & address are 100% visible */}
       <div className="w-full flex justify-center my-10 md:my-16 px-4 md:px-12">
         <div
           ref={imageFrameRef}
-          className="relative w-full max-w-7xl aspect-[2048/900] overflow-hidden shadow-2xl transition-shadow will-change-transform border border-[#EDE5DA]"
+          className="relative w-full max-w-7xl overflow-hidden shadow-2xl transition-shadow will-change-transform border border-[#EDE5DA] rounded-sm bg-[#292624]"
         >
           <Image
             src="/images/drive/logo_02.jpg"
-            alt="OMI SPA - 159 Ba Vân, Tân Bình - Hotline 0938 974 424"
-            fill
+            alt="OMI SPA - 159 Ba Vân, P.14, Q. Tân Bình, TP. HCM - Hotline 0938 974 424"
+            width={2048}
+            height={900}
             sizes="(max-width: 1280px) 100vw, 1280px"
-            className="object-contain sm:object-cover object-center"
+            className="w-full h-auto block"
             priority
           />
         </div>
