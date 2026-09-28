@@ -24,11 +24,11 @@ export default function About() {
     if (prefersReducedMotion || !containerRef.current) return;
 
     const ctx = gsap.context(() => {
-      // Image expansion from 75% to 100% width on scroll
+      // Image expansion from 88% to 100% width on scroll
       if (imageFrameRef.current) {
         gsap.fromTo(
           imageFrameRef.current,
-          { width: "75%", borderRadius: "16px" },
+          { width: "88%", borderRadius: "10px" },
           {
             width: "100%",
             borderRadius: "0px",
@@ -112,18 +112,19 @@ export default function About() {
         </div>
       </div>
 
-      {/* Expanding Cinematic Image Frame */}
-      <div className="w-full flex justify-center my-12 md:my-20">
+      {/* Expanding Cinematic Image Frame - Uses exact 2048/900 aspect ratio so bottom phone & address are fully visible */}
+      <div className="w-full flex justify-center my-10 md:my-16 px-4 md:px-12">
         <div
           ref={imageFrameRef}
-          className="relative h-[55vh] md:h-[75vh] overflow-hidden shadow-2xl transition-shadow will-change-transform"
+          className="relative w-full max-w-7xl aspect-[2048/900] overflow-hidden shadow-2xl transition-shadow will-change-transform border border-[#EDE5DA]"
         >
           <Image
             src="/images/drive/logo_02.jpg"
-            alt="Không gian OMI SPA yên tĩnh và sạch sẽ"
+            alt="OMI SPA - 159 Ba Vân, Tân Bình - Hotline 0938 974 424"
             fill
-            sizes="(max-width: 768px) 100vw, 90vw"
-            className="object-cover object-center"
+            sizes="(max-width: 1280px) 100vw, 1280px"
+            className="object-contain sm:object-cover object-center"
+            priority
           />
         </div>
       </div>
