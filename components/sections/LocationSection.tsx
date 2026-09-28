@@ -82,6 +82,7 @@ export default function LocationSection() {
           <div className="lg:col-span-7">
             <div className="relative w-full h-[400px] md:h-[480px] rounded-sm overflow-hidden border border-[#EDE5DA] shadow-xl bg-[#EDE5DA]/30">
               <iframe
+                suppressHydrationWarning
                 title="Vị trí OMI SPA trên Google Maps"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.227244463421!2d106.64332857485721!3d10.793896589356125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752ec30d517d7b%3A0xe543e3ffbeea9171!2zMTU5IEJhIFbDom4sIFBoxrDhu51uZyAxNCwgVMOibiBCw6xuaCwgSOG7kyBDaMOtIE1pbmgsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1711600000000!5m2!1svi!2s"
                 width="100%"
