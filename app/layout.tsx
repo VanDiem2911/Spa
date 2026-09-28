@@ -1,21 +1,29 @@
 import type { Metadata, Viewport } from "next";
-import { Be_Vietnam_Pro, Cormorant_Garamond } from "next/font/google";
+import { Playfair_Display, Lora, Be_Vietnam_Pro } from "next/font/google";
 import "./globals.css";
 import SmoothScrollProvider from "@/components/layout/SmoothScrollProvider";
 import ScrollProgressBar from "@/components/ui/ScrollProgressBar";
+
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
+  subsets: ["latin", "vietnamese"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  display: "swap",
+});
+
+const lora = Lora({
+  variable: "--font-lora",
+  subsets: ["latin", "vietnamese"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  display: "swap",
+});
 
 const beVietnamPro = Be_Vietnam_Pro({
   variable: "--font-vietnam",
   subsets: ["latin", "vietnamese"],
   weight: ["300", "400", "500", "600", "700"],
-  display: "swap",
-});
-
-const cormorant = Cormorant_Garamond({
-  variable: "--font-cormorant",
-  subsets: ["latin", "vietnamese"],
-  weight: ["300", "400", "500", "600", "700"],
-  style: ["normal", "italic"],
   display: "swap",
 });
 
@@ -79,7 +87,7 @@ export default function RootLayout({
   return (
     <html
       lang="vi"
-      className={`${beVietnamPro.variable} ${cormorant.variable} scroll-smooth antialiased`}
+      className={`${beVietnamPro.variable} ${playfair.variable} ${lora.variable} scroll-smooth antialiased`}
     >
       <body className="bg-[#F8F5EF] text-[#292624] selection:bg-[#6E1F2A] selection:text-[#F8F5EF] min-h-screen relative flex flex-col font-sans">
         <ScrollProgressBar />
