@@ -26,6 +26,17 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleLogoClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (typeof window !== "undefined") {
+      if (window.location.hash) {
+        window.location.replace(window.location.origin);
+      } else {
+        window.location.reload();
+      }
+    }
+  };
+
   return (
     <>
       <header
@@ -36,11 +47,12 @@ export default function Header() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
-          {/* Brand Logo with Official Emblem */}
+          {/* Brand Logo with Official Emblem - Click to reload page */}
           <Link
-            href="#hero"
+            href="/"
+            onClick={handleLogoClick}
             className="group flex items-center gap-3.5 cursor-pointer focus:outline-none"
-            aria-label="OMI SPA - Về đầu trang"
+            aria-label="OMI SPA - Tải lại trang"
           >
             <div className="relative w-10 h-10 md:w-11 md:h-11 rounded-full overflow-hidden border border-[#EDE5DA]/40 shadow-sm shrink-0">
               <Image
@@ -144,7 +156,15 @@ export default function Header() {
         aria-label="Mobile Navigation"
       >
         <div className="pt-20">
-          <div className="mb-8 pb-6 border-b border-[#EDE5DA] flex items-center gap-3">
+          <Link
+            href="/"
+            onClick={(e) => {
+              setIsMobileMenuOpen(false);
+              handleLogoClick(e);
+            }}
+            className="mb-8 pb-6 border-b border-[#EDE5DA] flex items-center gap-3 cursor-pointer group"
+            aria-label="OMI SPA - Tải lại trang"
+          >
             <div className="relative w-12 h-12 rounded-full overflow-hidden border border-[#6E1F2A]/30 shadow-sm shrink-0">
               <Image
                 src="/images/logo.jpg"
@@ -162,7 +182,7 @@ export default function Header() {
                 Bảo Dưỡng Sức Khoẻ
               </p>
             </div>
-          </div>
+          </Link>
 
           <nav className="flex flex-col gap-5">
             {navLinks.map((item) => (
