@@ -1,69 +1,53 @@
-import Image from "next/image";
+import React from "react";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import MobileFloatingCta from "@/components/layout/MobileFloatingCta";
+
+import Hero from "@/components/sections/Hero";
+import About from "@/components/sections/About";
+import EditorialTypography from "@/components/sections/EditorialTypography";
+import ServicesPinned from "@/components/sections/ServicesPinned";
+import QuietMoment from "@/components/sections/QuietMoment";
+import RealGallery from "@/components/sections/RealGallery";
+import WhyOmi from "@/components/sections/WhyOmi";
+import Booking from "@/components/sections/Booking";
+import LocationSection from "@/components/sections/LocationSection";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <main className="relative min-h-screen bg-[#F8F5EF] text-[#292624] overflow-x-hidden selection:bg-[#6E1F2A] selection:text-[#F8F5EF]">
+      <Header />
+      
+      {/* SCENE 01 & 02: HERO - 100% REAL BANNER & LOGO EMBLEM */}
+      <Hero />
+
+      {/* SCENE 03: ABOUT / THE SPACE - REAL TREATMENT ROOM AT 159 BA VÂN */}
+      <About />
+
+      {/* SCENE 04: EDITORIAL TYPOGRAPHY */}
+      <EditorialTypography />
+
+      {/* SCENE 05: PINNED SERVICES SHOWCASE - 100% REAL TREATMENT PHOTOS */}
+      <ServicesPinned />
+
+      {/* SCENE 06: QUIET BREATHING MOMENT WITH REAL OMI SPA POSTER */}
+      <QuietMoment />
+
+      {/* SCENE 07: AUTHENTIC GALLERY FROM GOOGLE DRIVE */}
+      <RealGallery />
+
+      {/* SCENE 09: WHY OMI SPA (EDITORIAL ROW LAYOUT) */}
+      <WhyOmi />
+
+      {/* SCENE 10: DEEP BURGUNDY BOOKING SECTION */}
+      <Booking />
+
+      {/* SCENE 11: LOCATION & DIRECTIONS */}
+      <LocationSection />
+
+      {/* FOOTER & MOBILE STICKY CTA */}
+      <Footer />
+      <MobileFloatingCta />
+    </main>
   );
 }
