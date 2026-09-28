@@ -29,11 +29,14 @@ export default function Header() {
   const handleLogoClick = (e: React.MouseEvent) => {
     e.preventDefault();
     if (typeof window !== "undefined") {
-      if (window.location.hash) {
-        window.location.replace(window.location.origin);
-      } else {
-        window.location.reload();
+      if ("scrollRestoration" in window.history) {
+        window.history.scrollRestoration = "manual";
       }
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+      if (window.location.hash) {
+        window.history.replaceState(null, "", window.location.pathname);
+      }
+      window.location.reload();
     }
   };
 

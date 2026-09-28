@@ -35,6 +35,15 @@ export default function SmoothScrollProvider({
 
     lenisRef.current = lenis;
 
+    // Ensure page loads at the very top (0, 0)
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+    if (!window.location.hash) {
+      window.scrollTo(0, 0);
+      lenis.scrollTo(0, { immediate: true });
+    }
+
     // Connect Lenis to GSAP ScrollTrigger
     lenis.on("scroll", ScrollTrigger.update);
 
